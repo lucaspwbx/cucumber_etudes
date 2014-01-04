@@ -8,10 +8,11 @@ gem 'sqlite3'
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'spork-rails'
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end
 
