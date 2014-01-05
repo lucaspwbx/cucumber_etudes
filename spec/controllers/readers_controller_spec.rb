@@ -52,5 +52,24 @@ describe ReadersController do
         expect(flash[:notice]).not_to be_nil
       end
     end
+
+    context 'when save message returns false' do
+      before do
+        allow(reader).to receive(:save).and_return(false)
+        post :create, reader: params
+      end
+
+      it 'renders new template' do
+        expect(response).to render_template :new
+      end
+
+      it 'assigns reader variable to the view' do
+        expect(assigns[:reader]).to eq reader
+      end
+
+      it 'assigns error flash message' do
+        expect(flash[:error]).to_not be_nil
+      end
+    end
   end
 end

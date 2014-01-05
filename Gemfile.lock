@@ -55,6 +55,8 @@ GEM
       rails (>= 3.0.0)
     database_cleaner (1.2.0)
     diff-lcs (1.2.5)
+    email_validator (1.4.0)
+      activemodel
     erubis (2.7.0)
     execjs (2.0.2)
     gherkin (2.12.2)
@@ -163,6 +165,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   cucumber-rails
   database_cleaner
+  email_validator
   jbuilder (~> 1.2)
   jquery-rails
   pry
