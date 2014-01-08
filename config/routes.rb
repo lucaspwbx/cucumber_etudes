@@ -1,7 +1,9 @@
 Libapp::Application.routes.draw do
   get "home/index"
   get '/register', to: 'readers#new', as: :register
+  get '/login', to: 'sessions#new', as: :login
   resources :readers
+  resources :sessions
   root 'home#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

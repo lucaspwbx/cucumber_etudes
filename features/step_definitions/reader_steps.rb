@@ -43,3 +43,26 @@ Then /^I should see the guest menu$/ do
   expect(page).to have_selector('#top-menu')
   expect(page).to have_link('Register', href: register_path)
 end
+
+Given /^I am a "(.*?)" reader$/ do |arg1|
+  pending
+end
+
+Then /^I should see "(.*?)" reader menu$/ do |arg1|
+  pending
+end
+
+Given /^reader with "(.*?)" exists$/ do |email|
+  Reader.create(email: email, password: 'pass', password_confirmation: 'pass')
+end
+
+When /^I fill the login form with valid data for "(.*?)" reader$/ do |email|
+  visit '/login'
+  fill_in 'log_email', with: email
+  fill_in 'log_password', with: 'pass'
+  click_button 'Login'
+end
+
+Then /^I should be logged in as "(.*?)" reader$/ do |email|
+  expect(page).to have_content("Welcome, #{reader}")
+end
