@@ -15,7 +15,7 @@ Then(/^I should be registered in application$/) do
 end
 
 Then(/^I should be logged in$/) do
-    pending # express the regexp above with the code you wish you had
+  expect(page).to have_content('reader01@mail.com')
 end
 
 When(/^I fill the register form with invalid data$/) do
@@ -33,4 +33,13 @@ end
 Then(/^I should not be registered in application$/) do
   reader = Reader.where(email: 'reader').first
   expect(reader).to be_nil
+end
+
+When /^I go to the home page$/ do
+  visit root_url
+end
+
+Then /^I should see the guest menu$/ do
+  expect(page).to have_selector('#top-menu')
+  expect(page).to have_link('Register', href: register_path)
 end
