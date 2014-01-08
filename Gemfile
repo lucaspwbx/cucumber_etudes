@@ -7,6 +7,7 @@ gem 'rails', '4.0.2'
 gem 'sqlite3'
 
 gem 'email_validator'
+gem 'active_attr'
 
 group :development, :test do
   gem 'rspec-rails'

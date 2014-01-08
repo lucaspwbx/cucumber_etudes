@@ -58,11 +58,11 @@ end
 
 When /^I fill the login form with valid data for "(.*?)" reader$/ do |email|
   visit '/login'
-  fill_in 'log_email', with: email
-  fill_in 'log_password', with: 'pass'
+  fill_in 'login_email', with: email
+  fill_in 'login_password', with: 'pass'
   click_button 'Login'
 end
 
 Then /^I should be logged in as "(.*?)" reader$/ do |email|
-  expect(page).to have_content("Welcome, #{reader}")
+  expect(page).to have_content("Welcome, #{email}")
 end
