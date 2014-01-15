@@ -48,8 +48,8 @@ Given /^I am a "(.*?)" reader$/ do |arg1|
   pending
 end
 
-Then /^I should see "(.*?)" reader menu$/ do |arg1|
-  pending
+Then /^I should see "(.*?)" reader menu$/ do |email|
+  expect(page).to have_content("Welcome, #{email}")
 end
 
 Given /^reader with "(.*?)" exists$/ do |email|

@@ -8,6 +8,7 @@ gem 'sqlite3'
 
 gem 'email_validator'
 gem 'active_attr'
+gem 'bcrypt-ruby'
 
 group :development, :test do
   gem 'rspec-rails'
